@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="in.rgpvnotes.buddies.activities.AccountSetupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="1.0">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_user_default"
+                app:civ_border_color="@color/common_google_signin_btn_text_light_default"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_user_default"/>
+        <TextView
+                android:text="Add a photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:id="@+id/textView3" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp" android:drawableStart="@drawable/ic_camera" android:drawablePadding="6dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttomLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp" app:layout_constraintHorizontal_bias="0.0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter your name"
+                    android:inputType="textNoSuggestions|textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_statusInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/nameInput" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Status"
+                    android:inputType="textAutoCorrect"
+                    android:maxLength="50"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+                android:id="@+id/setupButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/mybutton"
+                android:text="Finish"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="32dp" app:layout_constraintStart_toStartOf="parent"/>
+        <fr.castorflex.android.circularprogressbar.CircularProgressBar
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:indeterminate="true"
+                app:cpb_color="#FFee44"
+                app:cpb_colors="@array/gplus_colors"
+                app:cpb_rotation_speed="1.0"
+                app:cpb_sweep_speed="1.0"
+                app:cpb_stroke_width="4dp"
+                app:cpb_min_sweep_angle="10"
+                app:cpb_max_sweep_angle="300"
+                android:id="@+id/circularProgressBar2"
+                app:layout_constraintBottom_toBottomOf="@+id/setupButton"
+                app:layout_constraintTop_toTopOf="@+id/setupButton" android:layout_marginStart="24dp"
+                app:layout_constraintStart_toStartOf="@+id/setupButton"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
