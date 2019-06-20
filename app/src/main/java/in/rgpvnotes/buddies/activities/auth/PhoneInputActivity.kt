@@ -1,6 +1,7 @@
 package `in`.rgpvnotes.buddies.activities.auth
 
 import `in`.rgpvnotes.buddies.R
+import android.accounts.AccountAuthenticatorActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.numeric_keypad.*
 
 
-class PhoneInputActivity : AppCompatActivity(), View.OnClickListener {
+class PhoneInputActivity : AccountAuthenticatorActivity(), View.OnClickListener {
 
     private val textFieldInputConnection by lazy { BaseInputConnection(phoneInput, true) }
 
@@ -24,17 +25,6 @@ class PhoneInputActivity : AppCompatActivity(), View.OnClickListener {
 
         phoneInput.requestFocus()
         phoneInput.showSoftInputOnFocus = false
-
-        email_login.setOnClickListener {
-
-            FirebaseAuth.getInstance().signInWithEmailAndPassword("theanoopp@gmail.com","123456").addOnSuccessListener {
-
-
-
-
-            }
-
-        }
 
         phoneInput.customSelectionActionModeCallback = object : ActionMode.Callback {
 
